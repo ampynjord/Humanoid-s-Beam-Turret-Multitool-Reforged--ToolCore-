@@ -1,0 +1,283 @@
+<?xml version="1.0" ?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<CubeBlocks>
+		<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
+			<Id>
+				<TypeId>ConveyorSorter</TypeId>
+				<SubtypeId>BeamMultiToolTurret</SubtypeId>
+			</Id>
+			<DisplayName>Beam Turret Multitool (Weld/Grind/Drill)</DisplayName>
+			<Icon>Textures\GUI\Icons\Cubes\BeamToolTurret.dds</Icon>
+			<Description>100m range beam multitool with Welding, Grinding and Drilling modes</Description>
+			<CubeSize>Large</CubeSize>
+			<GuiVisible>true</GuiVisible>
+			<BlockTopology>TriangleMesh</BlockTopology>
+			<Size x="1" y="1" z="1" />
+			<ModelOffset x="0" y="0" z="0" />
+			<Model>Models\Cubes\large\BeamToolTurret.mwm</Model>
+			<UseModelIntersection>true</UseModelIntersection>
+			<Components>
+				<Component Subtype="InteriorPlate" Count="40" />
+				<Component Subtype="Construction" Count="100" />
+				<Component Subtype="Superconductor" Count="50" />
+				<Component Subtype="Computer" Count="20" />
+				<Component Subtype="Thrust" Count="20" />
+				<Component Subtype="Motor" Count="2" />
+				<Component Subtype="Construction" Count="20" />
+				<Component Subtype="InteriorPlate" Count="10" />
+			</Components>
+			<CriticalComponent Subtype="Motor" Index="0" />
+
+			<!-- WELD MODE -->
+			<ToolValues Type="Weld">
+				<EffectShape>Line</EffectShape>
+				<WorkOrder>Backward</WorkOrder>
+				<WorkOrigin>Emitter</WorkOrigin>
+				<Emitter>emitter</Emitter>
+				<Offset x="0" y="0" z="-0.1" />
+				<HalfExtent x="5" y="8" z="5" />
+				<Radius>10</Radius>
+				<Length>100</Length>
+				<Speed>1.5</Speed>
+				<WorkRate>1</WorkRate>
+				<Debug>false</Debug>
+				<AffectOwnGrid>false</AffectOwnGrid>
+				<Action Type="Primary" SizeRatio="1" SpeedRatio="1" HarvestRatio="1" />
+				<Turret>
+					<TargetRadius>100</TargetRadius>
+					<Subpart>
+						<Name>MissileTurretBase1</Name>
+						<RotationAxis>Up</RotationAxis>
+						<RotationSpeed>90</RotationSpeed>
+					</Subpart>
+					<Subpart>
+						<Name>MissileTurretBarrels</Name>
+						<RotationAxis>Right</RotationAxis>
+						<RotationSpeed>45</RotationSpeed>
+						<MinRotation>-15</MinRotation>
+						<MaxRotation>180</MaxRotation>
+					</Subpart>
+				</Turret>
+				<Event Trigger="RayHit">
+					<Beam>
+						<Start>emitter</Start>
+						<EndLocation>Hit</EndLocation>
+						<Material>WeaponLaser</Material>
+						<Width>0.08</Width>
+						<Color>
+							<X>0.2</X>
+							<Y>0.6</Y>
+							<Z>1</Z>
+							<W>1</W>
+						</Color>
+					</Beam>
+					<ParticleEffect>
+						<Name>ShipWelderArc</Name>
+						<Location>Hit</Location>
+						<Dummy>emitter</Dummy>
+						<Offset x="0" y="0" z="-4" />
+					</ParticleEffect>
+					<Sound>
+						<Name>LaserMultitoolSoundLoop</Name>
+					</Sound>
+				</Event>
+				<Event Trigger="Firing">
+					<Beam>
+						<Start>emitter</Start>
+						<EndLocation>Hit</EndLocation>
+						<Material>WeaponLaser</Material>
+						<Width>0.05</Width>
+						<Color>
+							<X>0.3</X>
+							<Y>0.7</Y>
+							<Z>1</Z>
+							<W>1</W>
+						</Color>
+					</Beam>
+					<Sound>
+						<Name>ArcToolLrgWeldIdle</Name>
+					</Sound>
+				</Event>
+				<MaterialSpecificModifiers>
+					<Material Category="Sand" SpeedRatio="0.5" HarvestRatio="1.3"/>
+					<Material Category="Soil" SpeedRatio="5" HarvestRatio="0.2"/>
+				</MaterialSpecificModifiers>
+			</ToolValues>
+
+			<!-- GRIND MODE -->
+			<ToolValues Type="Grind">
+				<EffectShape>Line</EffectShape>
+				<WorkOrder>Forward</WorkOrder>
+				<WorkOrigin>Emitter</WorkOrigin>
+				<Emitter>emitter</Emitter>
+				<Offset x="0" y="0" z="-0.1" />
+				<HalfExtent x="5" y="8" z="5" />
+				<Radius>10</Radius>
+				<Length>100</Length>
+				<Speed>1.5</Speed>
+				<WorkRate>1</WorkRate>
+				<Debug>false</Debug>
+				<AffectOwnGrid>false</AffectOwnGrid>
+				<Action Type="Primary" SizeRatio="1" SpeedRatio="1" HarvestRatio="1" />
+				<Turret>
+					<TargetRadius>100</TargetRadius>
+					<Subpart>
+						<Name>MissileTurretBase1</Name>
+						<RotationAxis>Up</RotationAxis>
+						<RotationSpeed>90</RotationSpeed>
+					</Subpart>
+					<Subpart>
+						<Name>MissileTurretBarrels</Name>
+						<RotationAxis>Right</RotationAxis>
+						<RotationSpeed>45</RotationSpeed>
+						<MinRotation>-15</MinRotation>
+						<MaxRotation>180</MaxRotation>
+					</Subpart>
+				</Turret>
+				<Event Trigger="RayHit">
+					<Beam>
+						<Start>emitter</Start>
+						<EndLocation>Hit</EndLocation>
+						<Material>WeaponLaser</Material>
+						<Width>0.12</Width>
+						<Color>
+							<X>1</X>
+							<Y>0.1</Y>
+							<Z>0</Z>
+							<W>1</W>
+						</Color>
+					</Beam>
+					<ParticleEffect>
+						<Name>ShipWelderArc</Name>
+						<Location>Hit</Location>
+						<Dummy>emitter</Dummy>
+						<Offset x="0" y="0" z="-4" />
+					</ParticleEffect>
+					<Sound>
+						<Name>LaserMultitoolSoundLoop</Name>
+					</Sound>
+				</Event>
+				<Event Trigger="Firing">
+					<Beam>
+						<Start>emitter</Start>
+						<EndLocation>Hit</EndLocation>
+						<Material>WeaponLaser</Material>
+						<Width>0.08</Width>
+						<Color>
+							<X>1</X>
+							<Y>0.2</Y>
+							<Z>0</Z>
+							<W>1</W>
+						</Color>
+					</Beam>
+					<Sound>
+						<Name>ArcToolLrgWeldIdle</Name>
+					</Sound>
+				</Event>
+				<MaterialSpecificModifiers>
+					<Material Category="Sand" SpeedRatio="0.5" HarvestRatio="1.3"/>
+					<Material Category="Soil" SpeedRatio="5" HarvestRatio="0.2"/>
+				</MaterialSpecificModifiers>
+			</ToolValues>
+
+			<!-- DRILL MODE - NOUVEAU -->
+			<ToolValues Type="Drill">
+				<EffectShape>Line</EffectShape>
+				<WorkOrder>Forward</WorkOrder>
+				<WorkOrigin>Emitter</WorkOrigin>
+				<Emitter>emitter</Emitter>
+				<Offset x="0" y="0" z="-0.1" />
+				<HalfExtent x="1.5" y="2" z="1.5" />
+				<Radius>2.2</Radius>
+				<Length>100</Length>
+				<Speed>0.6</Speed>
+				<WorkRate>1</WorkRate>
+				<Debug>false</Debug>
+				<AffectOwnGrid>false</AffectOwnGrid>
+				<Action Type="Primary" SizeRatio="1" SpeedRatio="1" HarvestRatio="1" />
+				<Action Type="Secondary" SizeRatio="2" SpeedRatio="1" HarvestRatio="0" />
+				<Event Trigger="RayHit">
+					<Beam>
+						<Start>emitter</Start>
+						<EndLocation>Hit</EndLocation>
+						<Material>WeaponLaser</Material>
+						<Width>0.15</Width>
+						<Color>
+							<X>1</X>
+							<Y>0.55</Y>
+							<Z>0</Z>
+							<W>1</W>
+						</Color>
+					</Beam>
+					<ParticleEffect>
+						<Name>Collision_Sparks</Name>
+						<Location>Hit</Location>
+						<Dummy>emitter</Dummy>
+						<Offset x="0" y="0" z="-4" />
+					</ParticleEffect>
+					<Sound>
+						<Name>LaserMultitoolSoundLoop</Name>
+					</Sound>
+				</Event>
+				<Event Trigger="Firing">
+					<Beam>
+						<Start>emitter</Start>
+						<EndLocation>Hit</EndLocation>
+						<Material>WeaponLaser</Material>
+						<Width>0.10</Width>
+						<Color>
+							<X>1</X>
+							<Y>0.65</Y>
+							<Z>0</Z>
+							<W>1</W>
+						</Color>
+					</Beam>
+					<Sound>
+						<Name>ArcToolLrgWeldIdle</Name>
+					</Sound>
+				</Event>
+				<MaterialSpecificModifiers>
+					<Material Category="Stone" SpeedRatio="1" HarvestRatio="1"/>
+					<Material Category="Ore" SpeedRatio="1" HarvestRatio="1"/>
+					<Material Category="Ice" SpeedRatio="1.5" HarvestRatio="1"/>
+				</MaterialSpecificModifiers>
+			</ToolValues>
+
+			<BlockPairName>BeamMultiToolTurret</BlockPairName>
+
+            <SimpleUpdateVisualOnSkinChange>true</SimpleUpdateVisualOnSkinChange>
+
+			<MirroringY>Z</MirroringY>
+			<MirroringZ>Y</MirroringZ>
+			<EdgeType>Light</EdgeType>
+			<BuildTimeSeconds>20</BuildTimeSeconds>
+			<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<ResourceSinkGroup>Conveyors</ResourceSinkGroup>
+			<PowerInput>0.00025</PowerInput>
+			<InventorySize>
+				<X>5</X>
+				<Y>1</Y>
+				<Z>1</Z>
+			</InventorySize>
+			<EmissiveColorPreset>Default</EmissiveColorPreset>
+			<DamageEffectName>Damage_HeavyMech_Damaged</DamageEffectName>
+			<DamagedSound>ParticleHeavyMech</DamagedSound>
+			<DestroyEffect>BlockDestroyedExplosion_Large</DestroyEffect>
+			<DestroySound>WepSmallWarheadExpl</DestroySound>
+			<PCU>25</PCU>
+			<IsAirTight>true</IsAirTight>
+			<MountPoints>
+				<MountPoint Side="Front" StartX="0.00" StartY="0.03" EndX="1.00" EndY="0.16" PressurizedWhenOpen="true"/>
+				<MountPoint Side="Back" StartX="0.00" StartY="0.03" EndX="1.00" EndY="0.16"/>
+				<MountPoint Side="Left" StartX="0.00" StartY="0.03" EndX="1.00" EndY="0.16"/>
+				<MountPoint Side="Right" StartX="0.00" StartY="0.03" EndX="1.00" EndY="0.16"/>
+				<MountPoint Side="Bottom" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00" Default="true" PressurizedWhenOpen="true"/>
+			</MountPoints>
+			<BuildProgressModels>
+				<Model BuildPercentUpperBound="0.50" File="Models\Cubes\large\BeamToolTurret_BS1.mwm"/>
+				<Model BuildPercentUpperBound="1.00" File="Models\Cubes\large\BeamToolTurret_BS2.mwm"/>
+			</BuildProgressModels>
+		</Definition>
+	</CubeBlocks>
+</Definitions>
