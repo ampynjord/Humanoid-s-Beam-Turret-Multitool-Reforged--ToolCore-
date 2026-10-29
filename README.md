@@ -2,111 +2,111 @@
 
 ## Description
 
-Cette version modifiée du mod original ajoute le **mode Drilling** à la tourelle multitool automatisée. La tourelle dispose maintenant de trois modes complets :
+This modified version of the original mod adds a **Drilling mode** to the automated multitool turret. The turret now has three complete modes:
 
-- **Mode Welding (Bleu)** - Soudage automatique
-- **Mode Grinding (Rouge)** - Meulage automatique
-- **Mode Drilling (Orange)** - Forage de voxels (NOUVEAU!)
+- **Welding mode (Blue)** - Automatic welding
+- **Grinding mode (Red)** - Automatic grinding
+- **Drilling mode (Orange)** - Voxel drilling (NEW!)
 
-## Caractéristiques
+## Features
 
-### Spécifications Techniques
-- **Portée:** 100 mètres
-- **Grille:** Large (1x1x1)
-- **Consommation électrique:**
+### Technical specifications
+- **Range:** 100 meters
+- **Grid:** Large (1x1x1)
+- **Power consumption:**
   - Idle: 0.001 MW
   - Welding: 0.5 MW
   - Grinding: 0.5 MW
   - Drilling: 0.75 MW
 
-### Modes de Fonctionnement
+### Operating modes
 
-#### Mode Welding (Bleu)
-- Vitesse de soudage: 1.5x
-- Réparation automatique des blocs endommagés
-- Portée: 100m
+#### Welding mode (Blue)
+- Welding speed: 1.5x
+- Automatic repair of damaged blocks
+- Range: 100m
 
-#### Mode Grinding (Orange)
-- Vitesse de meulage: 1.5x
-- Récupération des composants
-- Portée: 100m
+#### Grinding mode (Orange)
+- Grinding speed: 1.5x
+- Component recovery
+- Range: 100m
 
-#### Mode Drilling (Orange) - NOUVEAU
-- Forage de voxels (astéroïdes, planètes)
-- Collecte de minerai automatique
-- Portée: 100m
-- Effet visuel: étincelles et laser orange
+#### Drilling mode (Orange) - NEW
+- Voxel drilling (asteroids, planets)
+- Automatic ore collection
+- Range: 100m
+- Visual effect: sparks and orange laser
 
-### Système de Ciblage Automatique
-- Rotation: 360° (±180° azimut)
-- Élévation: 180° (-90° à +90°)
-- Cible automatiquement les grilles dans la portée
-- 1 cible à la fois pour plus de précision
+### Automatic targeting system
+- Rotation: 360° (±180° azimuth)
+- Elevation: 180° (-90° to +90°)
+- Automatically targets grids within range
+- One target at a time for better precision
 
 ## Installation
 
-1. **Dépendance requise:** Vous DEVEZ installer [ToolCore](https://steamcommunity.com/workshop/filedetails/?id=3040438530)
-2. Téléchargez ce mod
-3. Activez-le dans votre monde Space Engineers
+1. **Required dependency:** you MUST install [ToolCore](https://steamcommunity.com/workshop/filedetails/?id=3040438530)
+2. Download this mod
+3. Enable it in your Space Engineers world
 
-## Utilisation
+## Usage
 
-1. Placez le bloc "Beam Turret Multitool" sur votre grille
-2. Alimentez-le en électricité
-3. Utilisez le panneau de contrôle pour **changer de mode** :
-   - **Bleu** = Welding (soudage)
-   - **Rouge** = Grinding (meulage)
-   - **Orange** = Drilling (forage)
-4. Activez la tourelle - elle ciblera automatiquement dans son champ de vision
+1. Place the "Beam Turret Multitool" block on your grid
+2. Power it
+3. Use the control panel to **switch mode**:
+   - **Blue** = Welding
+   - **Red** = Grinding
+   - **Orange** = Drilling
+4. Turn the turret on - it will automatically target within its field of view
 
-## Comment Changer de Mode
+## How to switch mode
 
-Dans le panneau de contrôle du bloc :
-1. Cherchez l'option "Tool Mode" ou "Mode d'outil"
-2. Sélectionnez le mode souhaité dans la liste déroulante
-3. La couleur du faisceau changera pour indiquer le mode actif
+In the block's control panel:
+1. Look for the "Tool Mode" option
+2. Select the desired mode in the drop-down list
+3. The beam color changes to show the active mode
 
-### Astuce : Recentrage de la Tourelle
+### Tip: re-centering the turret
 
-**Pour recentrer la tourelle en position droite :**
-1. Changez de mode plusieurs fois - le changement de mode réinitialise parfois la position de la tourelle
-2. Passez notamment vers le **mode Drill** puis revenez - cela a plus de chances de recentrer
-3. Note : Le recentrage n'est pas garanti à 100%, il peut nécessiter plusieurs changements de mode
+**To re-center the turret in a straight position:**
+1. Switch mode several times - changing mode sometimes resets the turret position
+2. In particular, switch to **Drill mode** and back - this is more likely to re-center it
+3. Note: re-centering is not 100% guaranteed and may take several mode changes
 
-### Note Technique
+### Technical note
 
-**Bug graphique connu :** Lors du passage en mode Drill depuis Weld/Grind, le rayon laser peut rester visuellement fixé sur le dernier bloc ciblé. C'est purement cosmétique - le mode Drill fonctionne normalement pour forer les voxels. Le rayon disparaîtra dès que vous commencerez à forer.
+**Known graphical bug:** when switching to Drill mode from Weld/Grind, the laser beam may stay visually fixed on the last targeted block. This is purely cosmetic - Drill mode works normally for drilling voxels. The beam disappears as soon as you start drilling.
 
-## Différences avec l'Original
+## Differences from the original
 
-Cette version modifiée ajoute :
-- ✅ **Mode Drilling complet** avec extraction de minerai
-- ✅ Configuration ToolCore optimisée pour les trois modes
-- ✅ Effets visuels et sonores appropriés pour chaque mode
-- ✅ Indicateurs de couleur distincts (Bleu/Rouge/Orange)
+This modified version adds:
+- ✅ **Complete Drilling mode** with ore extraction
+- ✅ ToolCore configuration optimized for the three modes
+- ✅ Appropriate visual and sound effects for each mode
+- ✅ Distinct color indicators (Blue/Red/Orange)
 
-## Crédits
+## Credits
 
-- **Mod original:** humanoid.mp4 - [Humanoid's Beam Turret Multitool](https://steamcommunity.com/sharedfiles/filedetails/?id=3225982257)
-- **ToolCore Framework:** Ash Like Snow & BDCarrillo
-- **Modification (Drilling):** Gwenvaël Caouissin (ce mod)
+- **Original mod:** humanoid.mp4 - [Humanoid's Beam Turret Multitool](https://steamcommunity.com/sharedfiles/filedetails/?id=3225982257)
+- **ToolCore framework:** Ash Like Snow & BDCarrillo
+- **Modification (Drilling):** Gwenvaël Caouissin (this mod)
 
-## Support et Problèmes
+## Support and issues
 
-Si vous rencontrez des problèmes :
-1. Vérifiez que **ToolCore est bien activé** dans vos mods
-2. Vérifiez que la tourelle a assez d'énergie
-3. Assurez-vous que le mode est bien sélectionné dans le panneau de contrôle
-4. Pour le drilling, assurez-vous de cibler des voxels (astéroïdes, planètes)
+If you run into problems:
+1. Check that **ToolCore is enabled** in your mods
+2. Check that the turret has enough power
+3. Make sure the mode is selected in the control panel
+4. For drilling, make sure you target voxels (asteroids, planets)
 
 ## Changelog
 
 ### Version 1.0
-- Ajout du mode Drilling complet
-- Configuration des trois modes (Welding, Grinding, Drilling)
-- Effets visuels et sonores pour chaque mode
-- Système de ciblage automatique fonctionnel
+- Added the complete Drilling mode
+- Configuration of the three modes (Welding, Grinding, Drilling)
+- Visual and sound effects for each mode
+- Working automatic targeting system
 
-## Licence
+## License
 
-Ce mod est une modification du mod original "Humanoid's Beam Turret Multitool" et utilise le framework ToolCore. Respectez les licences des mods originaux.
+This mod is a modification of the original "Humanoid's Beam Turret Multitool" mod and uses the ToolCore framework. Respect the licenses of the original mods.
